@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Заявка | Фантоми</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>ПОДАТИ ЗАЯВКУ</h1>
+</header>
+
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="ranks.html">Ранги</a>
+    <a href="register.html">Заявка</a>
+</nav>
+
+<section class="hero">
+    <h2>Анкета кандидата</h2>
+</section>
+
+<section class="info">
+    <div class="card" style="width: 400px;">
+        <form>
+            <label>Нік в грі:</label><br>
+            <input type="text" style="width:100%; padding:8px;"><br><br>
+
+            <label>Вік:</label><br>
+            <input type="number" style="width:100%; padding:8px;"><br><br>
+
+            <label>Онлайн (год/день):</label><br>
+            <input type="text" style="width:100%; padding:8px;"><br><br>
+
+            <label>Чому хочеш до нас?</label><br>
+            <textarea style="width:100%; padding:8px;"></textarea><br><br>
+
+            <button type="submit">Відправити</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Сімʼя «Фантоми»</p>
+</footer>
+
+</body>
+<!-- Екран успішної відправки -->
+<div id="successScreen" style="
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#1e7e34;
+    color:white;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-size:32px;
+    z-index:9999;
+">
+
+    <h1>✅ Успішно!</h1>
+    <p>Анкету створено</p>
+
+    <a href="index.html" style="
+        margin-top:30px;
+        padding:12px 25px;
+        background:white;
+        color:#1e7e34;
+        text-decoration:none;
+        font-size:18px;
+        border-radius:8px;
+        transition:0.3s;
+    "
+    onmouseover="this.style.background='#ddd'"
+    onmouseout="this.style.background='white'">
+        На головну
+    </a>
+
+</div>
+
+<script>
+    const form = document.querySelector("form");
+    const successScreen = document.getElementById("successScreen");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        form.style.display = "none";
+        successScreen.style.display = "flex";
+    });
+</script>
+
+</html>
